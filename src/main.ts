@@ -1,10 +1,9 @@
 import { createApp } from "vue"
-import '@unocss/reset/tailwind.css'
 import "./style.css"
 import App from "./App.vue"
-import 'virtual:uno.css'
 import { setupRouter } from "./routers"
 import { setupStore } from "./stores"
+import "@/plugins/unocss"
 
 const app = createApp(App)
 

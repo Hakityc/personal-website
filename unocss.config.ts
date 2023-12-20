@@ -1,7 +1,8 @@
 import { defineConfig, presetAttributify, presetUno, presetIcons } from "unocss"
+import { presetExtra } from 'unocss-preset-extra';
 
 export default defineConfig({
-  presets: [presetUno(), presetAttributify(), presetIcons({ scale: 1.2, warn: true })],
+  presets: [presetUno(), presetAttributify(), presetIcons({ scale: 1.2, warn: true }),presetExtra()],
   shortcuts: [
     ["wh-full", "w-full h-full"],
     ["f-c-c", "flex justify-center items-center"],

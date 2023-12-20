@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <i-mingcute:search-line></i-mingcute:search-line>
+  <div class="w-200">
+    <BaseFunctionButton>
+      <i-mingcute:search-line></i-mingcute:search-line>
+    </BaseFunctionButton>
+
   </div>
 </template>
 

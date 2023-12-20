@@ -9,6 +9,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AButton: typeof import('ant-design-vue/es')['Button']
+    BaseFunctionButton: typeof import('./../src/components/baseComponents/BaseFunctionButton.vue')['default']
     BasicComponent: typeof import('./../src/components/baseComponents/BasicComponent.vue')['default']
     CustomComponent: typeof import('./../src/components/customComponents/CustomComponent.vue')['default']
     'IMingcute:searchLine': typeof import('~icons/mingcute/search-line')['default']
