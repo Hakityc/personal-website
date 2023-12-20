@@ -9,6 +9,12 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BasicComponent: typeof import('./../src/components/baseComponents/BasicComponent.vue')['default']
+    CustomComponent: typeof import('./../src/components/customComponents/CustomComponent.vue')['default']
+    'IMingcute:searchLine': typeof import('~icons/mingcute/search-line')['default']
+    NavBar: typeof import('./../src/components/customComponents/home/NavBar.vue')['default']
+    NavBarItem: typeof import('./../src/components/customComponents/home/NavBarItem.vue')['default']
+    NavBarSearch: typeof import('./../src/components/customComponents/home/NavBarSearch.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
