@@ -2,9 +2,9 @@
   <div class="w-full h-full flex relative items-center justify-center">
     <BodyImage class="relative"></BodyImage>
     <BodyContent class="relative"></BodyContent>
-    <BubbleView class="absolute top-40 left-40"></BubbleView>
+    <!-- <BubbleView class="absolute top-30"></BubbleView> -->
   </div>
-</template>
+</template> 
 
 <script lang='ts' setup>
 import BubbleView from './BubbleView.vue'

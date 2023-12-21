@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-358.25 h-150.5 shrink-0 pointer-events-none">
+  <div class="flex w-full h-full shrink-0 pointer-events-none">
     <div
       class="w-[157px] h-[157px] left-0 top-[22px] absolute bg-gradient-to-br from-blue-600 via-violet-500 to-violet-500 rounded-[80px]"
     ></div>

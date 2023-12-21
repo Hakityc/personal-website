@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AAvatar: typeof import('ant-design-vue/es')['Avatar']
     AButton: typeof import('ant-design-vue/es')['Button']
     BaseFunctionButton: typeof import('./../src/components/baseComponents/BaseFunctionButton.vue')['default']
     BasicComponent: typeof import('./../src/components/baseComponents/BasicComponent.vue')['default']
@@ -16,7 +17,13 @@ declare module '@vue/runtime-core' {
     BodyImage: typeof import('./../src/components/customComponents/home/body/BodyImage.vue')['default']
     BubbleItem: typeof import('./../src/components/customComponents/home/bubble/BubbleItem.vue')['default']
     CustomComponent: typeof import('./../src/components/customComponents/CustomComponent.vue')['default']
+    'IIc:outlineEmail': typeof import('~icons/ic/outline-email')['default']
+    'ILineMd:email': typeof import('~icons/line-md/email')['default']
+    'ILineMd:emailTwotone': typeof import('~icons/line-md/email-twotone')['default']
+    'ILineMd:github': typeof import('~icons/line-md/github')['default']
+    'IMingcute:githubLine': typeof import('~icons/mingcute/github-line')['default']
     'IMingcute:searchLine': typeof import('~icons/mingcute/search-line')['default']
+    'ITabler:brandBilibili': typeof import('~icons/tabler/brand-bilibili')['default']
     NavBar: typeof import('./../src/components/customComponents/home/nav/NavBar.vue')['default']
     NavBarItem: typeof import('./../src/components/customComponents/home/nav/NavBarItem.vue')['default']
     NavBarSearch: typeof import('./../src/components/customComponents/home/nav/NavBarSearch.vue')['default']

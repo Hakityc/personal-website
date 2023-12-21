@@ -8,7 +8,7 @@
         {{ item.title }}
       </NavBarItem>
     </template>
-    <NavBarSearch></NavBarSearch>
+    <!-- <NavBarSearch></NavBarSearch> -->
   </div>
 </template>
 
@@ -22,10 +22,13 @@ const items = reactive<Item[]>([
     title: 'Home',
     isChecked: true
   }, {
-    title: 'Article',
+    title: 'Blog',
     isChecked: false
   }, {
     title: 'About',
+    isChecked: false
+  }, {
+    title: 'Product',
     isChecked: false
   }, {
     title: 'Contact',

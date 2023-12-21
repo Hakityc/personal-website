@@ -7,6 +7,7 @@ import { resolve } from "path"
 import unocss from "unocss/vite"
 import Icons from "unplugin-icons/vite"
 import IconsResolver from "unplugin-icons/resolver"
+import pxtorem from "postcss-pxtorem"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -45,6 +46,14 @@ export default defineConfig({
         javascriptEnabled: true,
       },
     },
+    postcss: {
+      plugins: [
+        pxtorem({
+          rootValue: 32, 
+          propList: ["*"],
+        })
+      ]
+    }
   },
   server: {
     host: "0.0.0.0",

@@ -20,6 +20,7 @@ export default defineConfig({
   theme: {
     colors: {
       primary: "var(--primary-color)",
+      default: "var(--default-color)",
       dark_bg: "var(--dark-bg)",
     },
   },

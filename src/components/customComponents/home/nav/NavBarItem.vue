@@ -1,7 +1,7 @@
 <template>
   <div
-    class="flex flex-col cursor-pointer relative"
-    :class="`${isChecked ? 'text-primary' : 'text-#1C1C1C'}`"
+    class="flex flex-col cursor-pointer relative text-4"
+    :class="`${isChecked ? 'text-primary' : 'text-default'}`"
   >
     <slot></slot>
 
@@ -40,14 +40,14 @@ const props = defineProps<Props>()
   0% {
     transform: translateY(-5px);
     opacity: 0.5;
-    width: 8px;
+    width: 16px;
     border-radius: 50%;
   }
 
   50% {
     transform: translateY(0);
     opacity: 1;
-    width: 8px;
+    width: 16px;
     border-radius: 50%;
   }
 

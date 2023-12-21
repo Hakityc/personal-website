@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="public/avatar.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Tam Blog</title>
+  </head>
+  <style>
+    html {
+      font-size: 16px;
+    }
+    @media screen and (min-width: 375px) {
+      html {
+        /* 375px 作为 16px 基准，414px 宽度时正好对应 18px 的根字号大小 */
+        font-size: calc(16px + 2 * (100vw - 375px) / 39);
+      }
+    }
+    @media screen and (min-width: 414px) {
+      html {
+        /* 屏幕宽度从 414px 到 1000px，根字号大小累积增加 4px（18px-22px） */
+        font-size: calc(18px + 4 * (100vw - 414px) / 586);
+      }
+    }
+    @media screen and (min-width: 1000px) {
+      html {
+        /* 屏幕宽度从 1000px 往后每增加 100px，根字号大小就增加 0.5px */
+        font-size: calc(22px + 5 * (100vw - 1000px) / 1000);
+      }
+    }
+  </style>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>vue3-ts-less-antD template</title>
-</head>
-
-<body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.ts"></script>
-</body>
-
+  <body>
+    <div id="app"></div>
+    <script
+      type="module"
+      src="/src/main.ts"
+    ></script>
+  </body>
 </html>
