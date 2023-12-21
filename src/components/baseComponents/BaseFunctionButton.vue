@@ -1,7 +1,7 @@
 <template>
   <a-button
     type="default"
-    class="flex w-24 h-24 items-center justify-center p-0!"
+    class="flex w-6 h-6 items-center justify-center p-0!"
   >
     <slot></slot>
   </a-button>

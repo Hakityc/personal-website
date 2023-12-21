@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row w-full fixed justify-between py-24 px-80">
+  <div class="flex flex-row w-full fixed justify-between px-20 py-6">
     <div>
       <!-- logo -->
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-25 gap-28 items-center">
+  <div class="inline-flex items-start gap-7">
     <template v-for="item in items">
       <NavBarItem
         :is-checked="item.isChecked"

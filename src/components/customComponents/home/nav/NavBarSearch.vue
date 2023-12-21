@@ -1,5 +1,5 @@
 <template>
-  <div class="w-200">
+  <div class="w-50">
     <BaseFunctionButton>
       <i-mingcute:search-line></i-mingcute:search-line>
     </BaseFunctionButton>
