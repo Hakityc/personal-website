@@ -1,0 +1,31 @@
+# deploy.yml
+name: Deploy to Aliyun Server
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: aliyun/setup-aliyun-cli-action@v1
+      - name: Install dependencies
+        run: npm install
+      - name: Build project
+        run: npm run build
+      - name: Upload files to server
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: root
+          server: 139.196.10.107
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: dist
+          remote_path: /var/www/app
+      # - name: Install docker and nginx
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install docker-ce docker-ce-cli containerd.io
+      #     sudo docker pull nginx
+      #     sudo docker run -d --name nginx -p 80:80 -v /var/www/app:/usr/share/nginx/html nginx
+      #   env:
+      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
