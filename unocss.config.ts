@@ -1,8 +1,21 @@
 import { defineConfig, presetAttributify, presetUno, presetIcons } from "unocss"
-import { presetExtra } from 'unocss-preset-extra';
+import { presetExtra } from 'unocss-preset-extra'
+import { presetWebFonts } from 'unocss'
 
 export default defineConfig({
-  presets: [presetUno(), presetAttributify(), presetIcons({ scale: 1.2, warn: true }),presetExtra()],
+  presets: [
+    presetUno(),
+    presetAttributify(),
+    presetIcons({ scale: 1.2, warn: true }),
+    presetExtra(),
+    presetWebFonts({
+      provider: 'google',
+      fonts: {
+        sans: 'Roboto',
+        mono: ['Fira Code', 'Fira Mono:400,700'],
+      },
+    }),
+  ],
   shortcuts: [
     ["wh-full", "w-full h-full"],
     ["f-c-c", "flex justify-center items-center"],

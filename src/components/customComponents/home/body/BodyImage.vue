@@ -1,31 +1,32 @@
 <template>
-  <div class="flex flex-col items-center">
-    <a-avatar
-      :src="avatar"
-      :size="200"
-      class="border-1px border-solid border-#8886CC shadow-2xl"
-    >
-      <!-- <img
-        class="w-60 h-60 shrink-0 rounded-full"
+  <div class="flex flex-col items-center justify-center gap-16">
+    <div class="flex items-center justify-center p-4 relative">
+      <div class="w-full h-full rounded-full bg-#8886CC filter-blur-3xl absolute avatar-animate"></div>
+      <a-avatar
         :src="avatar"
-      /> -->
-    </a-avatar>
+        :size="200"
+      >
+      </a-avatar>
+    </div>
     <div class="flex flex-row gap-6 justify-evenly items-center">
       <a-button
         type="text"
-        class="px-2"
+        class="flex items-center justify-center w-8 h-8 p-0"
+        @click="handleClick(UrlType.BILIBILI)"
       >
         <i-tabler:brand-bilibili class="text-6 text-default"></i-tabler:brand-bilibili>
       </a-button>
       <a-button
         type="text"
-        class="px-2"
+        class="flex items-center justify-center w-8 h-8 p-0"
+        @click="handleClick(UrlType.GITHUB)"
       >
         <i-line-md:github class="text-6 text-default"></i-line-md:github>
       </a-button>
       <a-button
         type="text"
-        class="px-2"
+        class="flex items-center justify-center w-8 h-8 p-0"
+        @click="handleClick(UrlType.EMAIL)"
       >
         <i-line-md:email class="text-6 text-default"></i-line-md:email>
       </a-button>
@@ -35,7 +36,37 @@
 
 <script lang='ts' setup>
 import avatar from '@/assets/avatar.png'
+import { message } from 'ant-design-vue'
 
+enum UrlType {
+  BILIBILI = 'https://space.bilibili.com/23076184',
+  GITHUB = 'https://github.com/Tamcony',
+  EMAIL = 'mailto:tangchony@qq.com'
+}
+
+const handleClick = (url: UrlType) => {
+  if (url == UrlType.EMAIL) {
+    message.info('暂未支持email', 1)
+    return
+  }
+  window.open(url)
+}
 </script>
 
-<style lang='less' scoped></style>
+<style lang='less' scoped>
+.avatar-animate {
+  animation: avatar 0.6s ease-in-out;
+}
+
+@keyframes avatar {
+  0% {
+    width: 0;
+    height: 0;
+  }
+
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>
