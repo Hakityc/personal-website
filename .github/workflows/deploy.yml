@@ -16,11 +16,12 @@ jobs:
       - name: Upload files to server
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          username: root
-          server: 139.196.10.107
+          username: 'root'
+          server: '139.196.10.107'
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: dist
+          local_path: 'dist/*'
           remote_path: /var/www/app
+          sftpArgs: '-o ConnectTimeout=5'
       # - name: Install docker and nginx
       #   run: |
       #     sudo apt-get update
