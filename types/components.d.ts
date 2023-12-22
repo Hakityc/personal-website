@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     BodyContent: typeof import('./../src/components/customComponents/home/body/BodyContent.vue')['default']
     BodyImage: typeof import('./../src/components/customComponents/home/body/BodyImage.vue')['default']
     BubbleItem: typeof import('./../src/components/customComponents/home/bubble/BubbleItem.vue')['default']
+    FilterAvatar: typeof import('./../src/components/customComponents/home/body/FilterAvatar.vue')['default']
     'ILineMd:email': typeof import('~icons/line-md/email')['default']
     'ILineMd:github': typeof import('~icons/line-md/github')['default']
     'ITabler:brandBilibili': typeof import('~icons/tabler/brand-bilibili')['default']

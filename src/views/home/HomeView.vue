@@ -1,5 +1,5 @@
 <template>
-    <div class="w-screen h-screen relative flex flex-col flex-1">
+    <div class="w-screen h-screen relative flex flex-col flex-1 bg-#EFEFEF">
         <HeaderView class="z-10"></HeaderView>
         <BodyView></BodyView>
     </div>

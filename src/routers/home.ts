@@ -2,13 +2,13 @@ import { RouteRecordRaw } from "vue-router"
 
 const route: RouteRecordRaw[] = [
   {
-    name: 'HomeView',
     path: '/',
     meta: {
       title:'home'
     },
     children: [
       {
+        name: 'HomeView',
         path: '',
         component: () => import('@/views/home/HomeView.vue')
       }

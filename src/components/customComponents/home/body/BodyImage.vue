@@ -1,12 +1,10 @@
 <template>
   <div class="flex flex-col items-center justify-center gap-16">
-    <div class="flex items-center justify-center p-4 relative">
-      <div class="w-full h-full rounded-full bg-#8886CC filter-blur-3xl absolute avatar-animate"></div>
-      <a-avatar
-        :src="avatar"
-        :size="200"
-      >
-      </a-avatar>
+    <div class="flex flex-row justify-center items-center">
+      <FilterAvatar
+        :avatar="avatar"
+        :size="60"
+      ></FilterAvatar>
     </div>
     <div class="flex flex-row gap-6 justify-evenly items-center">
       <a-button
@@ -36,6 +34,7 @@
 
 <script lang='ts' setup>
 import avatar from '@/assets/avatar.png'
+// import avatar from '@/assets/avatar3.jpg'
 import { message } from 'ant-design-vue'
 
 enum UrlType {
@@ -53,20 +52,4 @@ const handleClick = (url: UrlType) => {
 }
 </script>
 
-<style lang='less' scoped>
-.avatar-animate {
-  animation: avatar 0.6s ease-in-out;
-}
-
-@keyframes avatar {
-  0% {
-    width: 0;
-    height: 0;
-  }
-
-  100% {
-    width: 100%;
-    height: 100%;
-  }
-}
-</style>
+<style lang='less' scoped></style>
