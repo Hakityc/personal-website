@@ -23,8 +23,8 @@ jobs:
           server: '139.196.10.107'
           port: 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: './dist/*'
+          local_path: 'dist/*'
           remote_path: /var/www/app
-          delete_remote_files: true
+          # delete_remote_files: true
           sftpArgs: '-o ConnectTimeout=5'
           password: ${{ secrets.PASSWORD }}
