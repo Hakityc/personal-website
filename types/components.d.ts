@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AAvatar: typeof import('ant-design-vue/es')['Avatar']
     AButton: typeof import('ant-design-vue/es')['Button']
     BaseFunctionButton: typeof import('./../src/components/baseComponents/BaseFunctionButton.vue')['default']
     BodyContent: typeof import('./../src/components/customComponents/home/body/BodyContent.vue')['default']
