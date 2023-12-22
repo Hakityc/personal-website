@@ -16,21 +16,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # - name: Checkout code
-      #   uses: actions/checkout@v2
-      # - name: Install dependencies
-      #   run: npm install
-      # - name: Build project
-      #   run: npm run build
-      - name: Upload files to server
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
-        with:
-          username: 'root'
-          server: '139.196.10.107'
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: 'dist/*'
-          remote_path: /var/www/app
-          sftpArgs: '-o ConnectTimeout=5'
+    - uses: actions/checkout@master
+    - uses: taixw2/deploy-aliyun-oss@v1
+      with:
+        # aliyun config
+        region: oss-cn-hongkong.aliyuncs.com
+        access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+        access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
+        secure: true
+        # deploy config
+        entry: dist/**/* # glob pattern
+        remote-dir: /
+        path-rewrite: ^dist/
 
 
 # name: Deploy to Aliyun Server
