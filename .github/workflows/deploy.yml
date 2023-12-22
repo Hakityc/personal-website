@@ -1,18 +1,9 @@
 # deploy.yml
 name: Deploy to Aliyun OSS
 on:
-  push:
+  pull_request:
     branches: [ main ]
 jobs:
-  # build:
-  #     runs-on: ubuntu-latest
-  #     steps:
-  #         - uses: actions/checkout@v2
-  #         - uses: actions/setup-node@v2
-  #           with:
-  #               node-version: 18
-  #         - run: npm install
-  #         - run: npm run build
   deploy:
     runs-on: ubuntu-latest
     steps:
