@@ -1,27 +1,64 @@
 # deploy.yml
-name: Deploy to Aliyun Server
+name: Deploy to Aliyun OSS
 on:
   push:
     branches: [ main ]
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Install dependencies
-        run: npm install
-      - name: Build project
-        run: npm run build
-      - name: Upload files to server
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          username: 'root'
-          server: '139.196.10.107'
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: 'dist/*'
-          remote_path: /var/www/app
-          sftpArgs: '-o ConnectTimeout=5'
+          node-version: 18
+      - run: npm install
+      - run: npm run build
+        # uses: actions/checkout@v1
+      - uses: jerray/setup-aliyun-cli-action@v1.0.0
+        with:
+          aliyun-cli-version: '3.0.165'
+          mode: AK
+          access-key-id: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
+          access-key-secret: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
+          region: ${{ secrets.ALIYUN_REGION }}
+      - run: aliyun oss cp ./dir oss://backet/path -r -u
+            
+
+
+
+# name: Deploy to Aliyun Server
+# on:
+#   push:
+#     branches: [ main ]
+# jobs:
+#   build:
+#       runs-on: ubuntu-latest
+#       steps:
+#           - uses: actions/checkout@v2
+#           - uses: actions/setup-node@v2
+#             with:
+#                 node-version: 18
+#           - run: npm install
+#           - run: npm run build
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+#       - name: Install dependencies
+#         run: npm install
+#       - name: Build project
+#         run: npm run build
+#       - name: Upload files to server
+#         uses: wlixcc/SFTP-Deploy-Action@v1.0
+#         with:
+#           username: 'root'
+#           server: '139.196.10.107'
+#           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+#           local_path: 'dist/*'
+#           remote_path: /var/www/app
+#           sftpArgs: '-o ConnectTimeout=5'
       # - name: Install docker and nginx
       #   run: |
       #     sudo apt-get update
