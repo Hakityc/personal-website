@@ -1,19 +1,19 @@
 <template>
   <div class="flex w-full h-full shrink-0 pointer-events-none">
     <div
-      class="w-[157px] h-[157px] left-0 top-[22px] absolute bg-gradient-to-br from-blue-600 via-violet-500 to-violet-500 rounded-[80px]"
+      class="w-39.25 h-39.25 shrink-0 left-5/100 top-10 /100 border-rd-20 absolute bg-gradient-to-br from-blue-600 via-violet-500 to-violet-500 rounded-full"
     ></div>
     <div
-      class="w-[101px] h-[101px] left-[153px] top-[310px] absolute origin-top-left -rotate-90 bg-gradient-to-br from-blue-600 via-violet-500 to-violet-500 rounded-[80px]"
+      class="w-26 h-26 left-14/100 top-50/100 absolute origin-top-left -rotate-90 bg-gradient-to-br from-blue-600 via-violet-500 to-violet-500 rounded-full"
     ></div>
     <div
-      class="w-[93px] h-[93px] left-[1220px] top-[93px] absolute origin-top-left -rotate-90 bg-gradient-to-br from-blue-600 via-violet-500 to-violet-500 rounded-[80px]"
+      class="w-20 h-20 left-8/100 top-80/100 absolute origin-top-left -rotate-90 bg-gradient-to-br from-blue-600 via-violet-500 to-violet-500 rounded-full"
     ></div>
     <div
-      class="w-[147px] h-[147px] left-[1286px] top-[455px] absolute bg-gradient-to-br from-blue-600 via-violet-500 to-violet-500 rounded-[80px]"
+      class="w-20 h-20 left-90/100 top-10/100 absolute bg-gradient-to-br from-blue-600 via-violet-500 to-violet-500 rounded-full"
     ></div>
     <div
-      class="w-[90px] h-[90px] left-[90px] top-[490px] absolute bg-gradient-to-br from-blue-600 via-violet-500 to-violet-500 rounded-[80px]"
+      class="w-30  h-30 left-95/100 top-70/100 absolute bg-gradient-to-br from-blue-600 via-violet-500 to-violet-500 rounded-full"
     ></div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center p-4 relative">
+  <div class="flex shrink-0 items-center justify-center p-4 relative">
     <div
       class="w-full h-full rounded-full filter-blur-3xl absolute avatar-animate"
       :style="{

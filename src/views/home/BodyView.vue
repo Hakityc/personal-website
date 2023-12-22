@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full h-full flex relative items-center justify-center gap-20">
+  <div class="w-full h-full flex relative items-center justify-center gap-20 overflow-hidden">
     <BodyImage class="relative"></BodyImage>
     <BodyContent class="relative"></BodyContent>
-    <!-- <BubbleView class="absolute top-30"></BubbleView> -->
+    <BubbleView class="absolute"></BubbleView>
   </div>
 </template> 
 

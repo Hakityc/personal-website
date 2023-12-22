@@ -34,7 +34,7 @@
 
 <script lang='ts' setup>
 import avatar from '@/assets/avatar.png'
-// import avatar from '@/assets/avatar3.jpg'
+// import avatar from '@/assets/avatar2.jpg'
 import { message } from 'ant-design-vue'
 
 enum UrlType {
