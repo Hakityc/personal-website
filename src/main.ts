@@ -4,6 +4,7 @@ import App from "./App.vue"
 import { setupRouter } from "./routers"
 import { setupStore } from "./stores"
 import "@/plugins/unocss"
+import "@/plugins/nprogress"
 
 const app = createApp(App)
 
