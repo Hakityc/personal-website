@@ -29,8 +29,6 @@ declare module '@vue/runtime-core' {
     'ILineMd:github': typeof import('~icons/line-md/github')['default']
     'ISimpleLineIcons:magnifier': typeof import('~icons/simple-line-icons/magnifier')['default']
     'ITabler:brandBilibili': typeof import('~icons/tabler/brand-bilibili')['default']
-    Item: typeof import('./../src/components/custom/blog/body/tag/item.vue')['default']
-    List: typeof import('./../src/components/custom/blog/body/tag/list.vue')['default']
     NavBar: typeof import('./../src/components/custom/main/header/nav/NavBar.vue')['default']
     NavBarItem: typeof import('./../src/components/custom/main/header/nav/NavBarItem.vue')['default']
     NavBarSearch: typeof import('./../src/components/custom/main/header/nav/NavBarSearch.vue')['default']
