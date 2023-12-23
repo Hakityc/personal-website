@@ -2,7 +2,6 @@
   <div class="flex flex-col items-center justify-center gap-16">
     <div class="flex flex-row justify-center items-center">
       <FilterAvatar
-        :avatar="avatar"
         :size="60"
       ></FilterAvatar>
     </div>
@@ -33,8 +32,6 @@
 </template>
 
 <script lang='ts' setup>
-import avatar from '@/assets/avatar.png'
-// import avatar from '@/assets/avatar2.jpg'
 import { message } from 'ant-design-vue'
 
 enum UrlType {

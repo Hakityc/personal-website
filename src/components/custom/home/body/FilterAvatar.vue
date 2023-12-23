@@ -2,9 +2,7 @@
   <div class="flex shrink-0 items-center justify-center p-4 relative">
     <div
       class="w-full h-full rounded-full filter-blur-3xl absolute avatar-animate"
-      :style="{
-        backgroundImage: `url(${avatar})`
-      }"
+      :style="avatarStle"
     ></div>
     <img
       ref="avatarRef"
@@ -16,21 +14,28 @@
 </template>
 
 <script lang='ts' setup>
+// import avatar from '@/assets/avatar.png'
+import avatar from '@/assets/avatar4.jpg'
 import { useColorThief } from '@/hooks/useColorThief'
 
 const { getColor, mainColor } = useColorThief()
 
 interface Props {
-  avatar: string
   size: number
 }
 const props = defineProps<Props>()
 const avatarRef = ref<HTMLElement>()
+const avatarStle = computed(() => {
+  return {
+    //TODO 暂时不用mainColor
+    // backgroundColor: mainColor.value,
+    backgroundImage: `url(${avatar})`
+  }
+})
 
 const initColor = async () => {
   try {
-    await getColor(avatarRef.value)
-    console.log(mainColor.value)
+    // await getColor(avatarRef.value)
   }
   catch (error) {
     console.error(error)

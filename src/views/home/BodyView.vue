@@ -8,7 +8,6 @@
 </template> 
 
 <script lang='ts' setup>
-import BubbleView from './BubbleView.vue'
 
 </script>
 

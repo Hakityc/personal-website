@@ -19,46 +19,31 @@ interface Item {
   name: string
   path: string
 }
-//TODO 改由路由获取items
-const route = useRoute()
 const router = useRouter()
-// const items = reactive<Item[]>([
-//   {
-//     title: '首页',
-//     isChecked: true
-//   }, {
-//     title: '博客',
-//     isChecked: false
-//   }, {
-//     title: '项目',
-//     isChecked: false
-//   }, {
-//     title: '关于',
-//     isChecked: false
-//   }
-//   // {
-//   //   title: 'Contact',
-//   //   isChecked: false
-//   // },
-// ])
 
-const items = computed<Item[]>(() => {
-  return router.options.routes.map(_ => {
-    const title = _.meta.title as string || ''
+const items = computed(() => {
+  const { currentRoute, options } = router
+  return options.routes.map((item: any) => {
+    const { meta, path, name } = item
+    const { title } = meta
     return {
-      title: title,
-      isChecked: router.currentRoute.value.path == _.path,
-      name: _.name | '',
-      path: _.path | ''
+      title,
+      isChecked: path == currentRoute.value.path,
+      name,
+      path
     }
   })
 })
 
 const handleClickItem = (item: Item) => {
-  const { path } = item
-  router.push({
-    path
-  })
+  try {
+    const { path } = item
+    router.push({
+      path
+    })
+  } catch (error) {
+
+  }
 }
 </script>
 

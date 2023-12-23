@@ -5,7 +5,8 @@ const route: RouteRecordRaw[] = [
     path: '/blog',
     name: 'BlogView',
     meta: {
-      title:'博客'
+      title: 'Blog',
+      title_cn:'博客'
     },
     children: [
       {
