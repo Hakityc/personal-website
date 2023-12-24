@@ -1,6 +1,8 @@
 # deploy.yml
 name: Deploy to Aliyun OSS
 on:
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 jobs:
