@@ -9,9 +9,11 @@ import Icons from "unplugin-icons/vite"
 import IconsResolver from "unplugin-icons/resolver"
 import pxtorem from "postcss-pxtorem"
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
+import { viteMockServe } from "vite-plugin-mock";
+
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({command,mode})=>({
   plugins: [
     vue(),
     unocss(),
@@ -30,6 +32,10 @@ export default defineConfig({
       compiler: "vue3", // 编译方式
     }),
     VueI18nPlugin({})
+    viteMockServe({
+      mockPath: '@/mocks',
+      enable: mode === "mock", //在开发环境中启用 mock
+    })
   ],
   resolve: {
     alias: {
@@ -61,4 +67,4 @@ export default defineConfig({
     host: "0.0.0.0",
     proxy: {},
   },
-})
+}))

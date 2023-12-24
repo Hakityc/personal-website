@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full h-full flex flex-col">
+  <div class="w-full h-full flex flex-col pb-8 overflow-hidden">
     <BodyTagList></BodyTagList>
-    <BodyCardList></BodyCardList>
+    <BodyCardList class="flex-1"></BodyCardList>
   </div>
 </template>
 

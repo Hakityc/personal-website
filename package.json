@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "mock": "vite --mode mock",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -24,7 +25,8 @@
     "pinia": "^2.1.6",
     "pinia-plugin-persist": "^1.0.0",
     "postcss-pxtorem": "^6.0.0",
-    "unocss": "^0.54.3",
+    "unocss": "^0.40.0",
+    "unocss-preset-scrollbar-hide": "^1.0.1",
     "unplugin-auto-import": "^0.15.2",
     "unplugin-icons": "^0.16.5",
     "uuid": "^9.0.1",
@@ -38,10 +40,12 @@
     "@types/uuid": "^9.0.7",
     "@unocss/preset-web-fonts": "^0.58.0",
     "@vitejs/plugin-vue": "^4.1.0",
+    "mockjs": "^1.1.0",
     "typescript": "^4.9.5",
     "unocss-preset-extra": "^0.5.3",
     "unplugin-vue-components": "^0.24.1",
     "vite": "^4.2.0",
+    "vite-plugin-mock": "^2.9.6",
     "vue-tsc": "^1.2.0"
   }
 }
