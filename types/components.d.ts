@@ -10,6 +10,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/es')['Button']
+    AInput: typeof import('ant-design-vue/es')['Input']
     BaseFunctionButton: typeof import('./../src/components/base/BaseFunctionButton.vue')['default']
     BlogBody: typeof import('./../src/components/custom/blog/body/BlogBody.vue')['default']
     BlogHeader: typeof import('./../src/components/custom/blog/header/BlogHeader.vue')['default']
@@ -24,13 +25,18 @@ declare module '@vue/runtime-core' {
     BubbleItem: typeof import('./../src/components/custom/home/bubble/BubbleItem.vue')['default']
     BubbleLineBackground: typeof import('./../src/components/custom/home/bubble/BubbleLineBackground.vue')['default']
     FilterAvatar: typeof import('./../src/components/custom/home/body/FilterAvatar.vue')['default']
+    'IIconParkOutline:translate': typeof import('~icons/icon-park-outline/translate')['default']
     'ILineMd:email': typeof import('~icons/line-md/email')['default']
     'ILineMd:github': typeof import('~icons/line-md/github')['default']
+    'ISimpleLineIcons:magnifier': typeof import('~icons/simple-line-icons/magnifier')['default']
     'ITabler:brandBilibili': typeof import('~icons/tabler/brand-bilibili')['default']
     NavBar: typeof import('./../src/components/custom/main/header/nav/NavBar.vue')['default']
     NavBarItem: typeof import('./../src/components/custom/main/header/nav/NavBarItem.vue')['default']
     NavBarSearch: typeof import('./../src/components/custom/main/header/nav/NavBarSearch.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TollBar: typeof import('./../src/components/custom/main/header/tool/TollBar.vue')['default']
+    ToolBar: typeof import('./../src/components/custom/main/header/tool/ToolBar.vue')['default']
+    ToolBarTranslate: typeof import('./../src/components/custom/main/header/tool/ToolBarTranslate.vue')['default']
   }
 }

@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col">
-    
     <div class="flex flex-row w-full fixed justify-between px-20 py-6">
       <div>
         <!-- logo -->
       </div>
-      <div>
+      <div class="flex flex-row gap-12">
         <NavBar></NavBar>
+        <ToolBar></ToolBar>
       </div>
     </div>
   </div>
