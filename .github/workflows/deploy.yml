@@ -26,6 +26,6 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           local_path: './dist/*'
           remote_path: /usr/local/nginx/html
-          delete_remote_files: true
+          # delete_remote_files: true
           sftpArgs: '-o ConnectTimeout=5'
           password: ${{ secrets.PASSWORD }}
