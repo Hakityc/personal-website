@@ -66,6 +66,12 @@ const handleScroll = (type: 'add' | 'sub') => {
     x.value -= distance
   }
 }
+
+const init = async () => {
+  await run()
+}
+
+onMounted(init)
 </script>
 
 <style scoped></style>

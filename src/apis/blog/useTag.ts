@@ -9,5 +9,5 @@ import { Item } from '@/models/blog/tag'
   接口地址：https://app.apifox.com/link/project/3808301/apis/api-136420521
  */
 export const useTagList = () => {
-  return useFetch().get<Item[]>('/blog/tags')
+  return useFetch(true).get<Item[]>('/blog/tags')
 }
