@@ -13,6 +13,9 @@
 </template>
 
 <script lang='ts' setup>
+import { useI18nStore } from '@/stores/modules/i18n'
+const i18nStore = useI18nStore()
+
 interface Item {
   title: string
   isChecked: boolean
@@ -25,9 +28,9 @@ const items = computed(() => {
   const { currentRoute, options } = router
   return options.routes.map((item: any) => {
     const { meta, path, name } = item
-    const { title } = meta
+    const { title, title_cn } = meta
     return {
-      title,
+      title: i18nStore.isCurrentCN ? title_cn : title,
       isChecked: path == currentRoute.value.path,
       name,
       path

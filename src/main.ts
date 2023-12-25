@@ -9,10 +9,11 @@ import "@/plugins/nprogress"
 
 const app = createApp(App)
 
-const setupPlugin = () => {}
+const setupPlugin = () => {
+  setupI18n(app)
+}
 
 const setupApp = () => {
-  setupI18n(app)
   setupStore(app)
   setupRouter(app)
   app.mount("#app")
