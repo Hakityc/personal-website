@@ -8,6 +8,7 @@ import unocss from "unocss/vite"
 import Icons from "unplugin-icons/vite"
 import IconsResolver from "unplugin-icons/resolver"
 import pxtorem from "postcss-pxtorem"
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -28,6 +29,7 @@ export default defineConfig({
       autoInstall: true, // 自动安装
       compiler: "vue3", // 编译方式
     }),
+    VueI18nPlugin({})
   ],
   resolve: {
     alias: {
