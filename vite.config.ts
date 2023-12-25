@@ -31,7 +31,7 @@ export default defineConfig(({command,mode})=>({
       autoInstall: true, // 自动安装
       compiler: "vue3", // 编译方式
     }),
-    VueI18nPlugin({})
+    VueI18nPlugin({}),
     viteMockServe({
       mockPath: '@/mocks',
       enable: mode === "mock", //在开发环境中启用 mock

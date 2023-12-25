@@ -30,46 +30,28 @@
 
 <script lang='ts' setup>
 import { useScroll } from '@vueuse/core'
-interface Item {
-  text: string
+import { useTagList } from '@/apis/blog/useTag'
+import { Item } from '@/models/blog/tag'
+
+interface TagItem extends Item {
   isChecked: boolean
 }
+
 const scrollRef = ref()
 const { x } = useScroll(scrollRef, {
   behavior: 'smooth'
 })
-const items = ref<Item[]>([
-  {
-    text: 'All',
-    isChecked: true
-  }, {
-    text: 'Technology',
-    isChecked: false
-  }, {
-    text: 'Environment',
-    isChecked: false
-  }, {
-    text: 'Business',
-    isChecked: false
-  }, {
-    text: 'AAA',
-    isChecked: false
-  }, {
-    text: 'AAA',
-    isChecked: false
-  }, {
-    text: 'AAA',
-    isChecked: false
-  }, {
-    text: 'AAA',
-    isChecked: false
-  }, {
-    text: 'AAA',
-    isChecked: false
-  }
-])
+const { run, data, loading } = useTagList()
+const items = computed(() => {
+  return data.value?.map((item) => {
+    return {
+      ...item,
+      isChecked: false
+    }
+  }) || []
+})
 
-const handleClick = (item: Item) => {
+const handleClick = (item: TagItem) => {
   items.value.forEach((i) => {
     i.isChecked = false
   })

@@ -20,7 +20,7 @@ import { Item } from '@/models/blog/card'
 
 const mocks: MockType[] = [
   {
-    url: '/api/card/list',
+    url: '/api/blog/cards',
     method: 'get',
     response: {
       code: 0,
