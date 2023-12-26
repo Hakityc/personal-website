@@ -11,12 +11,14 @@
       ref="scrollRef"
       class="flex flex-row gap-12.5 items-center shrink-0 justify-start flex-1 overflow-x-scroll scrollbar-hide"
     >
-      <template v-for="item in items">
-        <BodyTagListItem
-          :item="item"
-          @click="handleClick(item)"
-        ></BodyTagListItem>
-      </template>
+      <BaseIsCheckButtonList :items="items">
+        <template #item="{ item, active }">
+          <BodyTagListItem
+            :item="item"
+            :is-active="active"
+          ></BodyTagListItem>
+        </template>
+      </BaseIsCheckButtonList>
     </div>
     <a-button
       type="text"
@@ -33,30 +35,14 @@ import { useScroll } from '@vueuse/core'
 import { useTagList } from '@/apis/blog/useTag'
 import { Item } from '@/models/blog/tag'
 
-interface TagItem extends Item {
-  isChecked: boolean
-}
-
 const scrollRef = ref()
 const { x } = useScroll(scrollRef, {
   behavior: 'smooth'
 })
 const { run, data, loading } = useTagList()
 const items = computed(() => {
-  return data.value?.map((item) => {
-    return {
-      ...item,
-      isChecked: false
-    }
-  }) || []
+  return data.value
 })
-
-const handleClick = (item: TagItem) => {
-  items.value.forEach((i) => {
-    i.isChecked = false
-  })
-  item.isChecked = true
-}
 
 const handleScroll = (type: 'add' | 'sub') => {
   const distance = 400

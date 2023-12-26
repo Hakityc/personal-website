@@ -2,10 +2,10 @@
   <div class="inline-flex items-start gap-7">
     <template v-for="item in items">
       <NavBarItem
-        :is-checked="item.isChecked"
+        :is-active="item.path == router.currentRoute.value.path"
+        :title="item.title"
         @click="handleClickItem(item)"
       >
-        {{ item.title }}
       </NavBarItem>
     </template>
     <!-- <NavBarSearch></NavBarSearch> -->
@@ -18,20 +18,18 @@ const i18nStore = useI18nStore()
 
 interface Item {
   title: string
-  isChecked: boolean
   name: string
   path: string
 }
 const router = useRouter()
 
 const items = computed(() => {
-  const { currentRoute, options } = router
+  const { options } = router
   return options.routes.map((item: any) => {
     const { meta, path, name } = item
     const { title, title_cn } = meta
     return {
       title: i18nStore.isCurrentCN ? title_cn : title,
-      isChecked: path == currentRoute.value.path,
       name,
       path
     }

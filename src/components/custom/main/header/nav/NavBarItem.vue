@@ -1,9 +1,9 @@
 <template>
   <div
     class="flex flex-col cursor-pointer relative text-4"
-    :class="`${isChecked ? 'text-primary' : 'text-default'}`"
+    :class="`${isActive ? 'text-primary' : 'text-default'}`"
   >
-    <slot></slot>
+    <slot>{{ title }}</slot>
 
     <div class="flex flex-row w-full justify-center absolute -bottom-2.5">
       <transition
@@ -11,7 +11,7 @@
         leave-active-class="animate-leave"
       >
         <div
-          v-if="isChecked"
+          v-if="isActive"
           class="flex w-full h-2 rounded-8 bg-primary"
         ></div>
       </transition>
@@ -22,7 +22,8 @@
 
 <script lang='ts' setup>
 interface Props {
-  isChecked: boolean
+  isActive: boolean
+  title: string
 }
 const props = defineProps<Props>()
 </script>
