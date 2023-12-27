@@ -8,12 +8,11 @@ import unocss from "unocss/vite"
 import Icons from "unplugin-icons/vite"
 import IconsResolver from "unplugin-icons/resolver"
 import pxtorem from "postcss-pxtorem"
-import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
-import { viteMockServe } from "vite-plugin-mock";
-
+import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite"
+import { viteMockServe } from "vite-plugin-mock"
 
 // https://vitejs.dev/config/
-export default defineConfig(({command,mode})=>({
+export default defineConfig(({ command, mode }) => ({
   plugins: [
     vue(),
     unocss(),
@@ -33,9 +32,9 @@ export default defineConfig(({command,mode})=>({
     }),
     VueI18nPlugin({}),
     viteMockServe({
-      mockPath: '@/mocks',
+      mockPath: "@/mocks",
       enable: mode === "mock", //在开发环境中启用 mock
-    })
+    }),
   ],
   resolve: {
     alias: {
@@ -57,14 +56,20 @@ export default defineConfig(({command,mode})=>({
     postcss: {
       plugins: [
         pxtorem({
-          rootValue: 32, 
+          rootValue: 32,
           propList: ["*"],
-        })
-      ]
-    }
+        }),
+      ],
+    },
   },
   server: {
     host: "0.0.0.0",
-    proxy: {},
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   },
 }))
