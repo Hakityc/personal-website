@@ -15,11 +15,11 @@ export interface CmdError {
 }
 
 const instance = _axios.create({
-  baseURL: '/api',
+  baseURL: '/api'
 })
 
 const instanceMock = _axios.create({
-  baseURL:'https://mock.apifox.com/m1/3808301-0-default'
+  baseURL: 'https://mock.apifox.com/m1/3808301-0-default'
 })
 
 instance.interceptors.request.use((config) => {
@@ -30,7 +30,7 @@ instance.interceptors.response.use((response: AxiosResponse<CmdData>) => {
   if (response.data.code !== 0) {
     return Promise.reject({
       isCmdError: true,
-      ...response.data,
+      ...response.data
     })
   }
   response.data = response.data.data

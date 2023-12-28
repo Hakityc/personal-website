@@ -12,9 +12,17 @@ import { useCardList } from '@/apis/blog/useCard'
 import Mock from 'mockjs'
 const { run, data, loading } = useCardList()
 const items = ref<Item[]>()
+const params = reactive({
+  pageNum: 1,
+  pageSize: 20,
+})
 
 const init = async () => {
-  await run()
+  await run({
+    pageNum: params.pageNum,
+    pageSize: params.pageSize,
+    q: ''
+  })
   console.log(data.value)
 }
 

@@ -54,7 +54,7 @@ const handleScroll = (type: 'add' | 'sub') => {
 }
 
 const init = async () => {
-  await run()
+  // await run()
 }
 
 onMounted(init)
