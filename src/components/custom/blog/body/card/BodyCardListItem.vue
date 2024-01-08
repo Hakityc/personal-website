@@ -11,10 +11,10 @@
       <span>{{ item.description }}</span>
       <div class="flex flex-row">
         <a-avatar
-          :icon="item.author.avatar"
+          :icon="item.author?.avatar"
           :size="12"
         ></a-avatar>
-        <span>{{ item.author.name }}</span>
+        <span>{{ item.author?.name }}</span>
       </div>
       <div class="flex flex-row">
         <template v-for="tag in item.tags">
