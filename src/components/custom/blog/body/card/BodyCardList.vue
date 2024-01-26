@@ -12,7 +12,6 @@ import { useCardList } from '@/apis/blog/useCard'
 
 const { run, data, loading } = useCardList()
 
-const items = ref<Item[]>()
 const params = reactive({
   pageNum: 1,
   pageSize: 20,

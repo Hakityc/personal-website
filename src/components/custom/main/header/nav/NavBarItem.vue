@@ -1,18 +1,18 @@
 <template>
   <div
-    class="flex flex-col cursor-pointer relative text-4"
+    class="flex flex-col cursor-pointer relative text-32"
     :class="`${isActive ? 'text-primary' : 'text-default'}`"
   >
     <slot>{{ title }}</slot>
 
-    <div class="flex flex-row w-full justify-center absolute -bottom-2.5">
+    <div class="flex flex-row w-full justify-center absolute -bottom-20">
       <transition
         enter-active-class="animate-enter"
         leave-active-class="animate-leave"
       >
         <div
           v-if="isActive"
-          class="flex w-full h-2 rounded-8 bg-primary"
+          class="flex w-full h-16 rounded-32 bg-primary"
         ></div>
       </transition>
     </div>
@@ -41,14 +41,14 @@ const props = defineProps<Props>()
   0% {
     transform: translateY(-5px);
     opacity: 0.5;
-    width: 16px;
+    width: 128px;
     border-radius: 50%;
   }
 
   50% {
     transform: translateY(0);
     opacity: 1;
-    width: 16px;
+    width: 128px;
     border-radius: 50%;
   }
 

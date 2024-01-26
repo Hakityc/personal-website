@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex flex-col pb-8 overflow-hidden">
+  <div class="w-full h-full flex flex-col pb-64 overflow-hidden">
     <BodyTagList></BodyTagList>
     <BodyCardList class="flex-1"></BodyCardList>
   </div>

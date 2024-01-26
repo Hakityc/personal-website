@@ -1,6 +1,6 @@
 <template>
     <div
-        class="h-8 min-w-10 flex flex-row items-center justify-end  bg-primary rounded-2xl px-4 transition-all duration-300 ease-in-out">
+        class="h-64 min-w-80 flex flex-row items-center justify-end  bg-primary rounded-24 px-32 transition-all duration-300 ease-in-out">
         <ToolBarTranslate></ToolBarTranslate>
     </div>
 </template>

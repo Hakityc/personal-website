@@ -1,13 +1,13 @@
 <template>
-  <div class="flex shrink-0 items-center justify-center p-4 relative">
+  <div class="flex shrink-0 items-center justify-center p-32 relative">
     <div
-      class="w-full h-full rounded-full filter-blur-3xl absolute avatar-animate"
+      class="w-full h-full rounded-full filter-blur-360 absolute avatar-animate"
       :style="avatarStle"
     ></div>
     <img
       ref="avatarRef"
       :src="avatar"
-      class="z-10 w-60! h-60! rounded-full"
+      class="z-10 w-480! h-480! rounded-full"
       :class="`rounded-full`"
     />
   </div>

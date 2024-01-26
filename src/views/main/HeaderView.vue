@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-col">
-    <div class="flex flex-row w-full fixed justify-between px-20 py-6">
+    <div class="flex flex-row w-full fixed justify-between px-80 py-48">
       <div>
         <!-- logo -->
       </div>
-      <div class="flex flex-row gap-12">
+      <div class="flex flex-row gap-48">
         <NavBar></NavBar>
         <ToolBar></ToolBar>
       </div>

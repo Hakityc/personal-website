@@ -12,6 +12,7 @@ const mocks: MockType[] = [
           {
             'id|+1': 1,
             title: '@ctitle',
+            description: '@cparagraph',
             content: '@cparagraph',
             author: '@cname',
             date: '@date',
