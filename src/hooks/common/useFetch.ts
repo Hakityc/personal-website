@@ -1,5 +1,5 @@
-import { axios, axiosMock, CmdError } from '@/apis/axios'
-import { handleError } from '@/utils/handlerError'
+import { axios, axiosMock, CmdError } from '@/utils/request/axios'
+import { handleError } from '@/utils/request/handleError'
 
 export const useFetch = (isMock: boolean = false) => {
   const request = isMock ? axiosMock : axios

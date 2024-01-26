@@ -1,4 +1,4 @@
-import type { CmdError } from '@/apis/axios'
+import type { CmdError } from '@/utils/request/axios'
 import { message } from 'ant-design-vue'
 import { AxiosError } from 'axios'
 

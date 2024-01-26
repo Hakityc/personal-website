@@ -32,8 +32,8 @@ export default defineConfig(({ command, mode }) => ({
     }),
     VueI18nPlugin({}),
     viteMockServe({
-      mockPath: "@/mocks",
-      // enable: mode === "mock", //在开发环境中启用 mock
+      mockPath: "./src/mocks",
+      enable: true, //在开发环境中启用 mock
     }),
   ],
   resolve: {
@@ -65,11 +65,11 @@ export default defineConfig(({ command, mode }) => ({
   server: {
     host: "0.0.0.0",
     proxy: {
-      "/api": {
-        target: "http://localhost:8080",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
+      // "/api": {
+      //   target: "http://localhost:8080",
+      //   changeOrigin: true,
+      //   rewrite: (path) => path.replace(/^\/api/, ""),
+      // },
     },
   },
 }))

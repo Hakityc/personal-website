@@ -1,4 +1,4 @@
-import {CmdData} from '@/apis/axios'
+import { CmdData } from '@/utils/request/axios'
 
 export interface MockType {
   url: string

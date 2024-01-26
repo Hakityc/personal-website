@@ -11,7 +11,7 @@
       ref="scrollRef"
       class="flex flex-row gap-12.5 items-center shrink-0 justify-start flex-1 overflow-x-scroll scrollbar-hide"
     >
-      <BaseIsCheckButtonList :items="items">
+      <BaseIsCheckButtonList :items="items || []">
         <template #item="{ item, active }">
           <BodyTagListItem
             :item="item"

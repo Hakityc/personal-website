@@ -1,4 +1,4 @@
-import { RouteRecordRaw } from "vue-router"
+import { RouteRecordRaw } from 'vue-router'
 
 const route: RouteRecordRaw[] = [
   {
@@ -6,16 +6,15 @@ const route: RouteRecordRaw[] = [
     name: 'BlogView',
     meta: {
       title: 'Blog',
-      title_cn:'博客'
+      title_cn: '博客'
     },
     children: [
       {
         name: 'BlogView',
         path: '',
-        component: () => import('@/views/blog/BlogView.vue')
+        component: () => import('@/views/blog/index.vue')
       }
     ]
-    
   }
 ]
 export default route
