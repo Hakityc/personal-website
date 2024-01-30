@@ -8,7 +8,7 @@
     </div>
     <div class="flex flex-col flex-1">
       <span class="text-32 text-#1C1C1C mb-6">{{ item.title }}</span>
-      <span class="text-20">{{ item.description }}</span>
+      <span class="text-24">{{ item.description }}</span>
       <div class="flex flex-row mb-14">
         <a-avatar
           :icon="item.author?.avatar"
