@@ -2,9 +2,9 @@
 name: Deploy to Aliyun OSS
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,17 +14,17 @@ jobs:
       - name: build
         uses: actions/setup-node@v2
         with:
-            node-version: 18
+          node-version: 18
       - run: npm install
       - run: npm run build
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: scp pipelines
-        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER }}
-          user: root
-          pass: ${{ secrets.SSH_PRIVATE_KEY }}
-          scp: |
-            './dist/*' => /usr/local/nginx/html
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: whoami
