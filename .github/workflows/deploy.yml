@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -17,6 +17,9 @@ jobs:
             node-version: 18
       - run: npm install
       - run: npm run build
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
