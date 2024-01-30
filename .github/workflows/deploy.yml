@@ -28,4 +28,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           key: ${{secrets.SSH_PRIVATE_KEY}}
-          script: whoami
+          script: cp ./dist/* /usr/local/nginx/html/
