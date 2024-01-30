@@ -1,0 +1,34 @@
+# # deploy.yml
+# name: Deploy to Aliyun OSS
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: checkout
+#         uses: actions/checkout@v2
+#       - name: build
+#         uses: actions/setup-node@v2
+#         with:
+#             node-version: 20
+#       - run: npm install
+#       - run: npm run build
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: SFTP Deploy
+#         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+#         with:
+#           username: 'root'
+#           server: '${{ secrets.SERVER }}'
+#           port: 22
+#           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+#           local_path: './dist/*'
+#           remote_path: /usr/local/nginx/html
+#           # delete_remote_files: true
+#           sftpArgs: '-o ConnectTimeout=5'
+#           password: ${{ secrets.PASSWORD }}

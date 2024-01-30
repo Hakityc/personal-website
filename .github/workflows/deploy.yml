@@ -14,21 +14,17 @@ jobs:
       - name: build
         uses: actions/setup-node@v2
         with:
-            node-version: 18
+            node-version: 20
       - run: npm install
       - run: npm run build
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: scp pipelines
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         with:
-          username: 'root'
-          server: '${{ secrets.SERVER }}'
-          port: 22
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: './dist/*'
-          remote_path: /usr/local/nginx/html
-          # delete_remote_files: true
-          sftpArgs: '-o ConnectTimeout=5'
-          password: ${{ secrets.PASSWORD }}
+          host: ${{ secrets.SERVER }}
+          user: root
+          pass: ${{ secrets.SSH_PRIVATE_KEY }}
+          scp: |
+            './dist/*' => /usr/local/nginx/html
