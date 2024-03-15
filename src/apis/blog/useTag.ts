@@ -1,6 +1,6 @@
-import { axios } from '@/apis/axios'
-import { useFetch } from '@/hooks/common/useFetch'
+import { axios } from '@/utils/request/axios'
 import { Item } from '@/models/blog/tag'
+import { handleError } from '@/utils/request/handleError'
 
 /**
  * 博客-获取标签列表
@@ -9,5 +9,21 @@ import { Item } from '@/models/blog/tag'
   接口地址：https://app.apifox.com/link/project/3808301/apis/api-136420521
  */
 export const useTagList = () => {
-  return useFetch(true).get<Item[]>('/blog/tags')
+  const data = ref<Item[]>()
+  const loading = ref(false)
+  const run = () => {
+    try {
+      loading.value = true
+      const res = axios.get('/blog/tags')
+    } catch (error) {
+      handleError(error)
+    } finally {
+      loading.value = false
+    }
+  }
+  return {
+    run,
+    loading,
+    data
+  }
 }

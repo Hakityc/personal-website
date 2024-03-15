@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -17,8 +17,12 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm run build
-      - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+  deploy:
+    needs: build # 设置 deploy job 依赖于 build job
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.3
         with:
           username: "root"
           server: "${{ secrets.SERVER }}"
@@ -29,3 +33,4 @@ jobs:
           # delete_remote_files: true
           sftpArgs: "-o ConnectTimeout=5"
           password: ${{ secrets.PASSWORD }}
+

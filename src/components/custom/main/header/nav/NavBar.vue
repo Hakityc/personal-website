@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-flex items-start gap-7">
+  <div class="inline-flex items-start gap-46">
     <template v-for="item in items">
       <NavBarItem
         :is-active="item.path == router.currentRoute.value.path"

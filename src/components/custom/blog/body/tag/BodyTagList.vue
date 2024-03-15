@@ -1,17 +1,17 @@
 <template>
-  <div class="flex flex-row w-full items-center gap-4">
+  <div class="flex flex-row w-full items-center gap-32">
     <a-button
       type="text"
-      class="p-1!"
+      class="p-8!"
       @click="handleScroll('sub')"
     >
-      <i-grommet-icons:next class="text-4 rotate-180"></i-grommet-icons:next>
+      <i-grommet-icons:next class="text-32 rotate-180"></i-grommet-icons:next>
     </a-button>
     <div
       ref="scrollRef"
-      class="flex flex-row gap-12.5 items-center shrink-0 justify-start flex-1 overflow-x-scroll scrollbar-hide"
+      class="flex flex-row gap-50 items-center shrink-0 justify-start flex-1 overflow-x-scroll scrollbar-hide"
     >
-      <BaseIsCheckButtonList :items="items">
+      <BaseIsCheckButtonList :items="items || []">
         <template #item="{ item, active }">
           <BodyTagListItem
             :item="item"
