@@ -1,7 +1,7 @@
 <template>
   <div>
     <span
-      class="text-6 transition-all font-400 duration-200 cursor-pointer"
+      class="text-48 transition-all font-400 duration-200 cursor-pointer"
       :class="`${isActive ? 'text-#3652E1' : 'text-#8E8E8E'}`"
     >{{ item.name }}</span>
   </div>
