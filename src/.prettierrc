@@ -4,6 +4,6 @@
   "semi": false,
   "trailingComma": "none",
   "htmlWhitespaceSensitivity": "ignore",
-  "singleAttributePerLine": true,
+  "singleAttributePerLine": false,
   "bracketSameLine": true 
 }
