@@ -24,3 +24,5 @@ types/*
 *.njsproj
 *.sln
 *.sw?
+
+helper.json

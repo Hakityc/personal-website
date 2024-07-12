@@ -30,6 +30,7 @@
     "unplugin-auto-import": "^0.15.2",
     "unplugin-icons": "^0.16.5",
     "uuid": "^9.0.1",
+    "vite-plugin-vue-devtools": "^7.3.5",
     "vue": "^3.3.13",
     "vue-i18n": "^9.8.0",
     "vue-router": "^4.2.4"

@@ -8,9 +8,9 @@ import nProgress from 'nprogress'
 
 const routes: RouteRecordRaw[] = [
   ...home,
-  ...blog,
-  ...project,
-  ...about
+  // ...blog,
+  // ...project,
+  // ...about
 ]
 
 const router = createRouter({
