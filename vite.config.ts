@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { build, defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
@@ -10,7 +10,7 @@ import IconsResolver from "unplugin-icons/resolver";
 import pxtorem from "postcss-pxtorem";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 import { viteMockServe } from "vite-plugin-mock";
-import { config } from "process";
+import vueDevTools from "vite-plugin-vue-devtools";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -38,6 +38,7 @@ export default defineConfig(({ command, mode }) => {
         mockPath: "./src/mocks",
         enable: true, //在开发环境中启用 mock
       }),
+      vueDevTools()
     ],
     resolve: {
       alias: {
@@ -63,6 +64,20 @@ export default defineConfig(({ command, mode }) => {
             propList: ["*"],
           }),
         ],
+      },
+    },
+    build: {
+      target: "modules",
+      outDir: "build/html", // 指定输出路径
+      rollupOptions: {
+        // 确保外部化处理那些你不想打包进库的依赖,解决插件报错问题(reading 'isCE')
+        // external: ["vue"],
+        output: {
+          // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+          globals: {
+            vue: "Vue",
+          },
+        },
       },
     },
     server: {

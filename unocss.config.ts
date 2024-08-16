@@ -1,22 +1,22 @@
-import { defineConfig, presetAttributify, presetUno, presetIcons } from "unocss"
-import { presetExtra } from 'unocss-preset-extra'
-import { presetWebFonts } from 'unocss'
-import { presetScrollbarHide } from 'unocss-preset-scrollbar-hide'
+import { defineConfig, presetAttributify, presetUno, presetIcons } from "unocss";
+import { presetExtra } from "unocss-preset-extra";
+import { presetWebFonts } from "unocss";
+import { presetScrollbarHide } from "unocss-preset-scrollbar-hide";
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetUno({}),
     presetAttributify(),
     presetIcons({ scale: 1.2, warn: true }),
     presetExtra(),
     presetWebFonts({
-      provider: 'google',
-      fonts: {
-        sans: 'Roboto',
-        mono: ['Fira Code', 'Fira Mono:400,700'],
-      },
+      // provider: 'google',
+      // fonts: {
+      //   sans: 'Roboto',
+      //   mono: ['Fira Code', 'Fira Mono:400,700'],
+      // },
     }),
-    presetScrollbarHide()
+    presetScrollbarHide(),
   ],
   shortcuts: [
     ["wh-full", "w-full h-full"],
@@ -38,5 +38,13 @@ export default defineConfig({
       default: "var(--default-color)",
       dark_bg: "var(--dark-bg)",
     },
+    breakpoints: {
+      sm: "768px", // 如平板竖屏
+      md: "1024px", // 大屏平板，笔记本电脑
+      lg: "1280px", // 桌面显示器，低分辨率
+      xl: "1536px", // 桌面显示器, 高分辨率
+      "2xl": "1920px", // 1080p桌面显示器
+      "3xl": "2560px", // 1440p桌面显示器
+    },
   },
-})
+});
