@@ -1,4 +1,4 @@
-import { RouteRecordRaw } from "vue-router"
+import { RouteRecordRaw } from 'vue-router'
 
 const route: RouteRecordRaw[] = [
   {
@@ -7,6 +7,8 @@ const route: RouteRecordRaw[] = [
     meta: {
       title: 'Project',
       title_cn: '项目',
+      index: 1,
+      show: false
     },
     children: [
       {
@@ -15,7 +17,6 @@ const route: RouteRecordRaw[] = [
         component: () => import('@/views/project/ProjectView.vue')
       }
     ]
-    
   }
 ]
 export default route

@@ -1,17 +1,13 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
-import home from './modules/home'
-import blog from './modules/blog'
-import project from './modules/project'
-import about from './modules/about'
+// import home from './modules/home'
+// import blog from './modules/blog'
+// import project from './modules/project'
+// import about from './modules/about'
+import { getModulesRoutes } from '@/utils/router'
 
 import nProgress from 'nprogress'
 
-const routes: RouteRecordRaw[] = [
-  ...home,
-  // ...blog,
-  // ...project,
-  // ...about
-]
+const routes: RouteRecordRaw[] = [...getModulesRoutes()]
 
 const router = createRouter({
   history: createWebHistory(),
@@ -23,7 +19,7 @@ export const setupRouter = async (app: any) => {
   await router.isReady()
 }
 
-router.beforeEach((to,from,next) => {
+router.beforeEach((to, from, next) => {
   nProgress.start()
   next()
 })

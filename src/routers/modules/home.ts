@@ -1,4 +1,4 @@
-import { RouteRecordRaw } from "vue-router"
+import { RouteRecordRaw } from 'vue-router'
 
 const route: RouteRecordRaw[] = [
   {
@@ -7,6 +7,8 @@ const route: RouteRecordRaw[] = [
     meta: {
       title: 'Home',
       title_cn: '首页',
+      index: 0,
+      show: true
     },
     children: [
       {
@@ -15,7 +17,6 @@ const route: RouteRecordRaw[] = [
         component: () => import('@/views/home/HomeView.vue')
       }
     ]
-    
   }
 ]
 export default route
