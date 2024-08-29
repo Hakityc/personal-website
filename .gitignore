@@ -27,3 +27,6 @@ types/*
 *.sw?
 
 helper.json
+
+docs/.vitepress/dist/**
+docs/.vitepress/cache/**
