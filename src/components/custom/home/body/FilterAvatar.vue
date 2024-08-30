@@ -15,7 +15,7 @@
 
 <script lang='ts' setup>
 // import avatar from '@/assets/avatar.png'
-import avatar from '@/assets/avatar4.jpg'
+import avatar from '@/assets/avatar.jpg'
 import { useColorThief } from '@/hooks/useColorThief'
 
 const { getColor, mainColor } = useColorThief()

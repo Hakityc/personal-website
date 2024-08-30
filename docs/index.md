@@ -2,17 +2,14 @@
 layout: home
 
 hero:
-  name: VitePress
-  text: Vite & Vue powered static site generator.
-  tagline: Lorem ipsum...
+  name: Tam的博客
+  text: 记录学习过程
+  tagline: 急之易不暇,缓之或自明
   image:
-    src: /logo.png
+    src: /public/logo/logo_circle.png
     alt: VitePress
   actions:
     - theme: brand
-      text: Get Started
-      link: /guide/what-is-vitepress
-    - theme: alt
-      text: View on GitHub
-      link: https://github.com/vuejs/vitepress
+      text: 探索
+      link: /src/guide/index
 ---
