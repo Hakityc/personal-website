@@ -1,7 +1,6 @@
 import { defineConfig, presetAttributify, presetUno, presetIcons } from "unocss";
 import { presetExtra } from "unocss-preset-extra";
 import { presetWebFonts } from "unocss";
-import { presetScrollbarHide } from "unocss-preset-scrollbar-hide";
 
 export default defineConfig({
   presets: [
@@ -16,7 +15,6 @@ export default defineConfig({
       //   mono: ['Fira Code', 'Fira Mono:400,700'],
       // },
     }),
-    presetScrollbarHide(),
   ],
   shortcuts: [
     ["wh-full", "w-full h-full"],
