@@ -1,13 +1,13 @@
 <template>
   <div class="inline-flex items-start gap-46">
     <template v-for="item in items">
-      <NavBarItem
-        :is-active="item.path == router.currentRoute.value.path"
-        :title="item.title"
-        @click="handleClickItem(item)"
-      >
+      <NavBarItem :is-active="item.path == router.currentRoute.value.path" :title="item.title"
+        @click="handleClickItem(item)">
       </NavBarItem>
     </template>
+    <NavBarItem @click="handleRedirectBlog">
+      <span>博客</span>
+    </NavBarItem>
     <!-- <NavBarSearch></NavBarSearch> -->
   </div>
 </template>
@@ -45,6 +45,10 @@ const handleClickItem = (item: Item) => {
   } catch (error) {
 
   }
+}
+
+const handleRedirectBlog = () => {
+  window.open('https://tam.pub/docs', '_blank')
 }
 </script>
 
