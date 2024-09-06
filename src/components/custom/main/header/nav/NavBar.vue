@@ -5,9 +5,10 @@
         @click="handleClickItem(item)">
       </NavBarItem>
     </template>
-    <NavBarItem @click="handleRedirectBlog">
-      <span>博客</span>
-    </NavBarItem>
+    <a-button @click="handleRedirectBlog" class="w-100! h-48! flex flex-row items-center justify-center p-0!" type="text">
+      <span class="text-nowrap text-32">博客</span>
+      <BaseIcon icon-name="gg:arrow-top-right" icon-size="16"></BaseIcon>
+    </a-button>
     <!-- <NavBarSearch></NavBarSearch> -->
   </div>
 </template>
@@ -48,7 +49,7 @@ const handleClickItem = (item: Item) => {
 }
 
 const handleRedirectBlog = () => {
-  window.open('https://tam.pub/docs', '_blank')
+  window.open('https://tam.pub/blog', '_blank')
 }
 </script>
 

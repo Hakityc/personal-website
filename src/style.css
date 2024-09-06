@@ -4,10 +4,10 @@
   --dark-bg: #18181c;
 }
 
-html {
-  /* 方便unocss计算：1单位 = 0.25rem = 1px */
-  font-size: 4px !important;
-}
+/* 方便unocss计算：1单位 = 0.25rem = 1px */
+/* html {
+  font-size: 16px !important;
+} */
 
 
 html,

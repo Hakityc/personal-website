@@ -1,13 +1,14 @@
 import { defineConfig, presetAttributify, presetUno, presetIcons } from "unocss";
 import { presetExtra } from "unocss-preset-extra";
 import { presetWebFonts } from "unocss";
+import presetRemToPx from '@unocss/preset-rem-to-px'
 // import { presetScrollbarHide } from "unocss-preset-scrollbar-hide";
 
 export default defineConfig({
   presets: [
     presetUno({}),
     presetAttributify(),
-    presetIcons({ scale: 1.2, warn: true }),
+    presetIcons({ scale: 1, warn: true }),
     presetExtra(),
     presetWebFonts({
       // provider: 'google',
@@ -16,7 +17,9 @@ export default defineConfig({
       //   mono: ['Fira Code', 'Fira Mono:400,700'],
       // },
     }),
-    // presetScrollbarHide(),
+    presetRemToPx({
+      baseFontSize: 4
+    }),
   ],
   shortcuts: [
     ["wh-full", "w-full h-full"],
