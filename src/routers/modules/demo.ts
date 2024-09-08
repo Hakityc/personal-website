@@ -8,7 +8,7 @@ const routes: RouteRecordRaw[] = [
       title: 'Demo',
       title_cn: '代码',
       index: 3,
-      show: true
+      show: false
     },
     children: [
       {

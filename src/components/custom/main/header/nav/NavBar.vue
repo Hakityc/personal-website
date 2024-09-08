@@ -1,19 +1,24 @@
 <template>
   <div class="inline-flex items-start gap-46">
     <template v-for="item in items">
-      <NavBarItem :is-active="item.path == router.currentRoute.value.path" :title="item.title"
-        @click="handleClickItem(item)">
-      </NavBarItem>
+      <NavBarItem
+        :is-active="item.path == router.currentRoute.value.path"
+        :title="item.title"
+        @click="handleClickItem(item)"></NavBarItem>
     </template>
-    <a-button @click="handleRedirectBlog" class="w-100! h-48! flex flex-row items-center justify-center p-0!" type="text">
+    <button
+      @click="handleRedirectBlog"
+      class="w-100! h-48! flex flex-row items-center justify-center p-0!" >
       <span class="text-nowrap text-32">博客</span>
-      <BaseIcon icon-name="gg:arrow-top-right" icon-size="16"></BaseIcon>
-    </a-button>
+      <BaseIcon
+        icon-name="gg:arrow-top-right"
+        icon-size="24"></BaseIcon>
+    </button>
     <!-- <NavBarSearch></NavBarSearch> -->
   </div>
 </template>
 
-<script lang='ts' setup>
+<script lang="ts" setup>
 import { useI18nStore } from '@/stores/modules/i18n'
 const i18nStore = useI18nStore()
 
@@ -43,9 +48,7 @@ const handleClickItem = (item: Item) => {
     router.push({
       path
     })
-  } catch (error) {
-
-  }
+  } catch (error) {}
 }
 
 const handleRedirectBlog = () => {
@@ -53,4 +56,4 @@ const handleRedirectBlog = () => {
 }
 </script>
 
-<style lang='less' scoped></style>
+<style lang="less" scoped></style>

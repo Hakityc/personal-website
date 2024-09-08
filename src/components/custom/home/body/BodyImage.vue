@@ -21,19 +21,19 @@ const buttons = reactive([
     url: UrlType.JUEJIN,
     icon: 'i-tabler:brand-juejin'
   },
-  {
-    key: 2,
-    name: '邮箱',
-    url: UrlType.EMAIL,
-    icon: 'i-tabler:mail'
-  },
+  // {
+  //   key: 2,
+  //   name: '邮箱',
+  //   url: UrlType.EMAIL,
+  //   icon: 'i-tabler:mail'
+  // },
 
-  {
-    key: 0,
-    name: '哔哩哔哩',
-    url: UrlType.BILIBILI,
-    icon: 'i-tabler:brand-bilibili'
-  }
+  // {
+  //   key: 0,
+  //   name: '哔哩哔哩',
+  //   url: UrlType.BILIBILI,
+  //   icon: 'i-tabler:brand-bilibili'
+  // }
 ])
 
 const handleClick = (url: UrlType) => {
