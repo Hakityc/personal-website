@@ -2,6 +2,7 @@
 
 # rsa路径
 rsa_path="C:/Users/LX/.ssh/tyc_rsa" 
+rsa_path="C:/Users/Administrator/.ssh/aliyun.rsa"
 # 源文件
 source_dir="build/*" 
 # 目标目录
