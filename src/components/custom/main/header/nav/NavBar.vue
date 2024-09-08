@@ -6,14 +6,14 @@
         :title="item.title"
         @click="handleClickItem(item)"></NavBarItem>
     </template>
-    <button
+    <a-button
       @click="handleRedirectBlog"
-      class="w-100! h-48! flex flex-row items-center justify-center p-0!" >
+      class="w-100! h-48! flex flex-row items-center justify-center px-0! py-4!" 
+      type="text">
       <span class="text-nowrap text-32">博客</span>
-      <BaseIcon
-        icon-name="gg:arrow-top-right"
-        icon-size="24"></BaseIcon>
-    </button>
+      <i-gg:arrow-top-right></i-gg:arrow-top-right>
+
+    </a-button>
     <!-- <NavBarSearch></NavBarSearch> -->
   </div>
 </template>
