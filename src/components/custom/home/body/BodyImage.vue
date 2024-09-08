@@ -3,7 +3,7 @@ import { message } from 'ant-design-vue'
 
 enum UrlType {
   BILIBILI = 'https://space.bilibili.com/23076184',
-  GITHUB = 'https://github.com/Tamcony',
+  GITHUB = 'https://github.com/Hakityc',
   EMAIL = 'mailto:tangchony@qq.com',
   JUEJIN = 'https://juejin.cn/user/44448182708696'
 }
